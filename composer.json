@@ -1,0 +1,13 @@
+{
+    "name": "usuario/reddit",
+    "authors": [
+        {
+            "name": "David",
+            "email": "davidbanzer123@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    }
+}
