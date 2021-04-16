@@ -12,7 +12,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="http://logodownload.org" target="_blank"><img style="height: 30px; width: 80px;" src="https://logodownload.org/wp-content/uploads/2018/02/reddit-logo-13.png" class="img-fluid align-baseline mr-5" alt="reddit-logo-13" /></a>
+    <a href="index.php"><img style="height: 30px; width: 80px;" src="https://logodownload.org/wp-content/uploads/2018/02/reddit-logo-13.png" class="img-fluid align-baseline mr-5" alt="reddit-logo-13" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,7 +23,7 @@
                     Publicación
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Nueva Publicación</a>
+                    <a class="dropdown-item" href="index.php?controller=publicacion&action=insert">Nueva Publicación</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
