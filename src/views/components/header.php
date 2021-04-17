@@ -39,7 +39,7 @@
                     Usuario
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Nuevo Usuario</a>
+                    <a class="dropdown-item" href="index.php?controller=usuario&action=insert">Nuevo Usuario</a>
                 </div>
             </li>
         </ul>

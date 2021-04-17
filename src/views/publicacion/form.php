@@ -32,21 +32,23 @@
                         </div>
                         <div class="form-group">
                             <div>
-                                <label>Cantidad de Votos:</label>
-                            </div>
-                            <div>
-                                <input type="text" name="cantidad_de_votos" class="form-control"
-                                       value="<?php echo ($objPublicacion == null) ? '' : $objPublicacion->getCantidadDeVotos(); ?>"/>
+                                <input type="hidden" name="cantidad_de_votos" class="form-control"
+                                       value="<?php echo ($objPublicacion == null) ? 0 : $objPublicacion->getCantidadDeVotos(); ?>"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div>
                                 <label>Comunidad:</label>
                             </div>
-                            <div>
-                                <input type="text" name="comunidad_id" class="form-control"
-                                       value="<?php echo ($objPublicacion == null) ? '' : $objPublicacion->getComunidadId(); ?>"/>
-                            </div>
+                            <select name="comunidad_id" class="form-control">
+                                <?php foreach ($listaComunidades as $objComunidad): ?>
+                                    <option <?php if ($objPublicacion!= null && $objComunidad->getComunidadId() == $objPublicacion->getComunidadId()){
+                                        echo "selected";
+                                    }?> value="<?php echo $objComunidad->getComunidadId()?>">
+                                        <?php echo $objComunidad->getNombre()?>
+                                    </option>
+                                <?php endforeach;?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <div>

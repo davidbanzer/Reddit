@@ -2,6 +2,7 @@
 
 use App\controllers\ComunidadController;
 use App\controllers\PublicacionController;
+use App\controllers\UsuarioController;
 
 $controller = "publicacion";
 if (isset($_REQUEST["controller"])) {
@@ -63,4 +64,17 @@ switch ($controller) {
                 break;
         }
         break;
+    case "usuario":{
+        switch ($action) {
+            case "insert":
+                //Mostrar formulario
+                UsuarioController::insert();
+                break;
+            case "create":
+                //Guardar nuevo
+                UsuarioController::create($_REQUEST);
+                break;
+        }
+        break;
+    }
 }

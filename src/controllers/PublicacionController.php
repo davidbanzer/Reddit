@@ -19,7 +19,9 @@ class PublicacionController
     static function insert()
     {
         $objPublicacion = null;
+        $ComunidadBLL = new ComunidadBLL();
         $id = 0;
+        $listaComunidades = $ComunidadBLL->selectAll();
         include_once 'src/views/publicacion/form.php';
     }
 
@@ -42,12 +44,14 @@ class PublicacionController
     static function update($request)
     {
         $id = 0;
+        $comunidadBLL = new ComunidadBLL();
         $publicacionBLL = new PublicacionBLL();
         $objPublicacion = null;
         if(isset($request["id"])) {
             $id = $request["id"];
             $objPublicacion = $publicacionBLL->selectById($id);
         }
+        $listaComunidades = $comunidadBLL->selectAll();
         include_once 'src/views/publicacion/form.php';
     }
 
