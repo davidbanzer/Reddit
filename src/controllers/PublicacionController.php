@@ -3,13 +3,16 @@
 namespace App\controllers;
 
 use App\models\bll\PublicacionBLL;
+use App\models\bll\ComunidadBLL;
 
 class PublicacionController
 {
     static function index()
     {
         $publicacionBLL = new PublicacionBLL();
-        $listaPublicacion = $publicacionBLL->selectAll();
+        $comunidadBLL = new ComunidadBLL();
+        $listaComunidades = $comunidadBLL->selectAll();
+        $listaPublicaciones = $publicacionBLL->selectAll();
         include_once 'src/views/publicacion/list.php';
     }
 

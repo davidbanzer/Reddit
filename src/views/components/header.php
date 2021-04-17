@@ -31,7 +31,7 @@
                     Comunidad
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Nueva Comunidad</a>
+                    <a class="dropdown-item" href="index.php?controller=comunidad&action=insert">Nueva Comunidad</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

@@ -1,5 +1,6 @@
 <?php
 
+use App\controllers\ComunidadController;
 use App\controllers\PublicacionController;
 
 $controller = "publicacion";
@@ -39,30 +40,27 @@ switch ($controller) {
                 break;
         }
         break;
-    /*case "mascota":
+    case "comunidad":
         switch ($action) {
-            case "list":
-                MascotaController::index();
-                break;
             case "insert":
                 //Mostrar formulario
-                MascotaController::insert();
+                ComunidadController::insert();
                 break;
             case "create":
                 //Guardar nuevo
-                MascotaController::create($_REQUEST);
+                ComunidadController::create($_REQUEST);
                 break;
             case "update":
                 //Mostrar formulario
-                MascotaController::update($_REQUEST);
+                ComunidadController::update($_REQUEST);
                 break;
             case "saveupdate":
                 //Guardar cambios
-                MascotaController::saveUpdate($_REQUEST);
+                ComunidadController::saveUpdate($_REQUEST);
                 break;
             case "delete":
-                MascotaController::delete($_REQUEST);
+                ComunidadController::delete($_REQUEST);
                 break;
         }
-        break;*/
+        break;
 }

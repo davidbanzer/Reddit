@@ -4,6 +4,8 @@
 namespace App\models\dto;
 
 
+use App\models\bll\UsuarioBLL;
+
 class Comunidad
 {
     private $comunidad_id;
@@ -57,6 +59,13 @@ class Comunidad
     {
         $this->usuario_id = $usuario_id;
     }
-
-
+    public function getUsuarioForDisplay()
+    {
+        $usuarioBLL = new UsuarioBLL();
+        $objUsuario = $usuarioBLL->selectById($this->getUsuarioId());
+        if ($objUsuario == null) {
+            return "No definido";
+        }
+        return $objUsuario->getCorreo();
+    }
 }

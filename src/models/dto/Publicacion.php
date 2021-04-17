@@ -2,6 +2,9 @@
 
 namespace App\models\dto;
 
+use App\models\bll\ComunidadBLL;
+use App\models\bll\UsuarioBLL;
+
 class Publicacion
 {
     private $publicacion_id;
@@ -106,7 +109,23 @@ class Publicacion
     {
         $this->usuario_id = $usuario_id;
     }
-
-
+    public function getUsuarioForDisplay()
+    {
+        $usuarioBLL = new UsuarioBLL();
+        $objUsuario = $usuarioBLL->selectById($this->getUsuarioId());
+        if ($objUsuario == null) {
+            return "No definido";
+        }
+        return $objUsuario->getCorreo();
+    }
+    public function getComunidadForDisplay()
+    {
+        $comunidadBLL = new ComunidadBLL();
+        $objComunidad = $comunidadBLL->selectById($this->getUsuarioId());
+        if ($objComunidad == null) {
+            return "No definido";
+        }
+        return $objComunidad->getNombre();
+    }
 
 }

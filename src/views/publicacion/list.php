@@ -47,19 +47,36 @@
         <div class="col-8">
             <div class="card-columns d-flex flex-column">
                 <?php
-                foreach ($listaPublicacion as $objPublicacion): ?>
+                foreach ($listaPublicaciones as $objPublicacion): ?>
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title"><?php echo $objPublicacion->getTitulo() ?></h4>
                             <p class="card-text"><?php echo $objPublicacion->getDescripcion() ?></p>
                             <small>Votos: <?php echo $objPublicacion->getCantidadDeVotos() ?></small> <br>
+                            <hr>
+                            <small>Posteado por: <?php echo $objPublicacion->getUsuarioForDisplay() ?></small> <br>
+                            <small>Comunidad: <?php echo $objPublicacion->getComunidadForDisplay() ?></small> <br>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
         <div class="col-4">
-            <div>Esta es una prueba</div>
+            <div>
+                <div class="card-columns d-flex flex-column">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Comunidades</h4>
+                            <?php
+                            foreach ($listaComunidades as $objComunidad): ?>
+                                <hr>
+                                <h5 class="card-title"><?php echo $objComunidad->getNombre() ?></h5>
+                                <p class="card-text">Creado por: <?php echo $objComunidad->getUsuarioForDisplay() ?></p>
+                            <?php endforeach; ?>
+                            </div>
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
