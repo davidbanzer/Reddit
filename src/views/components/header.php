@@ -16,33 +16,47 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
+                <?php if (isset($_SESSION["usuarioLoggeado"])): ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Publicación
                 </a>
+                <?php endif;?>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?controller=publicacion&action=insert">Nueva Publicación</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
+                <?php if (isset($_SESSION["usuarioLoggeado"])): ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Comunidad
                 </a>
+                <?php endif;?>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?controller=comunidad&action=insert">Nueva Comunidad</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
+                <?php if (!isset($_SESSION["usuarioLoggeado"])): ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Usuario
                 </a>
+                <?php endif; ?>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="index.php?controller=usuario&action=insert">Nuevo Usuario</a>
                 </div>
             </li>
         </ul>
+        <div>
+            <?php if (!isset($_SESSION["usuarioLoggeado"])): ?>
+            <a href="index.php?controller=login&action=iniciarsesion" class="btn btn-outline-secondary">Log in</a>
+            <?php endif;?>
+            <?php if (isset($_SESSION["usuarioLoggeado"])): ?>
+            <a href="index.php?controller=publicacion&action=borrar-sesion" class="btn btn-outline-secondary">Log out</a>
+            <?php endif;?>
+        </div>
     </div>
 </nav>
 </body>

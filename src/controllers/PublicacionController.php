@@ -81,4 +81,9 @@ class PublicacionController
         }
         PublicacionController::index();
     }
+    public static function borrarSesion()
+    {
+        unset($_SESSION["usuarioLoggeado"]);
+        PublicacionController::index();
+    }
 }

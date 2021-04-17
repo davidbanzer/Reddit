@@ -1,6 +1,7 @@
 <?php
 
 use App\controllers\ComunidadController;
+use App\controllers\LoginController;
 use App\controllers\PublicacionController;
 use App\controllers\UsuarioController;
 
@@ -38,6 +39,9 @@ switch ($controller) {
                 break;
             case "delete":
                 PublicacionController::delete($_REQUEST);
+                break;
+            case "borrar-sesion":
+                PublicacionController::borrarSesion();
                 break;
         }
         break;
@@ -77,4 +81,14 @@ switch ($controller) {
         }
         break;
     }
+    case "login":
+        switch ($action) {
+            case "iniciarsesion":
+                LoginController::mostrarForm();
+                break;
+            case "postIniciarSesion":
+                LoginController::iniciarSesion($_REQUEST);
+                break;
+        }
+        break;
 }
