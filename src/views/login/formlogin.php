@@ -21,10 +21,10 @@ include_once "src/views/components/header.php" ?>
                         <input type="hidden" name="controller" value="login"/>
                         <div class="form-group">
                             <div>
-                                <label>Usuario:</label>
+                                <label>Correo:</label>
                             </div>
                             <div>
-                                <input type="text" name="usuario" class="form-control"/>
+                                <input type="text" name="correo" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">

@@ -55,7 +55,6 @@ class PublicacionBLL
             ":varPublicacionId" => $publicacion_id
         ));
     }
-
     function selectAll()
     {
         $listaPublicaciones = array();

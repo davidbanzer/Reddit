@@ -39,14 +39,29 @@ class UsuarioBLL
 
     function delete($id)
     {
-        $objConecction = new Connection();
-        $objConecction->queryWithParams("
+        $objConnection = new Connection();
+        $objConnection->queryWithParams("
         DELETE FROM usuario WHERE usuario_id = :varUsuarioId
         ", array(
             ":varUsuarioId" => $id
         ));
     }
-
+    function findUser($correo,$contra)
+    {
+        $objConnection = new Connection();
+        $res = $objConnection->queryWithParams("
+        SELECT * FROM usuario WHERE correo = :varCorreo AND contra = :varContra
+        ", array(
+            ":varCorreo" => $correo,
+            ":varContra" => $contra
+        ));
+        if ($res->rowCount() == 0) {
+            return null;
+        }
+        $row = $res->fetch(PDO::FETCH_ASSOC);
+        $objUsuario = $this->rowToDto($row);
+        return $objUsuario;
+    }
     function selectAll()
     {
         $listaUsuarios = array();
