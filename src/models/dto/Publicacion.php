@@ -121,7 +121,7 @@ class Publicacion
     public function getComunidadForDisplay()
     {
         $comunidadBLL = new ComunidadBLL();
-        $objComunidad = $comunidadBLL->selectById($this->getUsuarioId());
+        $objComunidad = $comunidadBLL->selectById($this->getComunidadId());
         if ($objComunidad == null) {
             return "No definido";
         }

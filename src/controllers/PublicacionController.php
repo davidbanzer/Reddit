@@ -84,6 +84,8 @@ class PublicacionController
     public static function borrarSesion()
     {
         unset($_SESSION["usuarioLoggeado"]);
+        unset($_SESSION["idUsuario"]);
+        unset($_SESSION["correoUsuario"]);
         PublicacionController::index();
     }
 }

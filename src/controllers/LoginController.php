@@ -21,6 +21,7 @@ class LoginController
         if($objUsuario != null){
             $_SESSION["usuarioLoggeado"] = $usuario;
             $_SESSION["idUsuario"] = $objUsuario->getUsuarioId();
+            $_SESSION["correoUsuario"] = $objUsuario->getCorreo();
             PublicacionController::index();
             return;
         }

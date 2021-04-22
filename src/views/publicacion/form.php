@@ -51,12 +51,14 @@
                             </select>
                         </div>
                         <div class="form-group">
+
                             <div>
-                                <label>Usuario:</label>
-                            </div>
-                            <div>
-                                <input type="text" name="usuario_id" class="form-control"
-                                       value="<?php echo ($objPublicacion == null) ? '' : $objPublicacion->getUsuarioId(); ?>"/>
+                                <input type="hidden" name="usuario_id" class="form-control"
+                                       value="<?php
+                                       if (isset($_SESSION["idUsuario"])) {
+                                           echo $_SESSION["idUsuario"];
+                                       }
+                                       ?>"/>
                             </div>
                         </div>
                         <div>
