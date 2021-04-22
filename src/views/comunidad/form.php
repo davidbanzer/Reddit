@@ -25,11 +25,10 @@ include_once 'src/views/components/header.php'
                         </div class="form-group">
                         <div>
                             <div>
-                                <label>Usuario:</label>
-                            </div>
-                            <div>
-                                <input type="text" name="usuario_id" class="form-control"
-                                       value="<?php echo ($objComunidad == null) ? '' : $objComunidad->getUsuarioId(); ?>"/>
+                                <input type="hidden" name="usuario_id" class="form-control"
+                                       value="<?php if (isset($_SESSION["idUsuario"])) {
+                                           echo $_SESSION["idUsuario"];
+                                       }?>"/>
                             </div>
                             <div class="mt-3">
                                 <input class="btn btn-primary" type="submit" value="Enviar datos"/>
