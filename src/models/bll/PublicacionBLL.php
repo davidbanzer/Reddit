@@ -69,7 +69,20 @@ class PublicacionBLL
         }
         return $listaPublicaciones;
     }
-
+    function selectAllById($id)
+    {
+        $listaPublicacion = array();
+        $objConnection = new Connection();
+        $res = $objConnection->query("
+            SELECT *
+            FROM publicacion where comunidad_id = $id
+        ");
+        while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
+            $publicacion = $this->rowToDto($row);
+            $listaPublicacion[] = $publicacion;
+        }
+        return $listaPublicacion;
+    }
     function selectById($publicacion_id)
     {
         $objConnection = new Connection();

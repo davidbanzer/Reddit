@@ -35,7 +35,7 @@
                             <?php
                             foreach ($listaComunidades as $objComunidad): ?>
                                 <hr>
-                                <h5 class="card-title"><?php echo $objComunidad->getNombre() ?></h5>
+                                <h5 class="card-title"><a class="text-dark" href="index.php?controller=comunidad&action=list&id=<?php echo $objComunidad->getComunidadId();?>"><?php echo $objComunidad->getNombre() ?></a></h5>
                                 <p class="card-text">Creado por: <?php echo $objComunidad->getUsuarioForDisplay() ?></p>
                             <?php endforeach; ?>
                             </div>
@@ -45,4 +45,4 @@
         </div>
     </div>
 </div>
-<?php include_once "src/views/components/header.php" ?>
+

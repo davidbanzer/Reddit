@@ -47,6 +47,9 @@ switch ($controller) {
         break;
     case "comunidad":
         switch ($action) {
+            case "list":
+                ComunidadController::index();
+                break;
             case "insert":
                 //Mostrar formulario
                 ComunidadController::insert();

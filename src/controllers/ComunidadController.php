@@ -9,11 +9,13 @@ class ComunidadController
 {
     static function index()
     {
+        /*$id = 0;
         $publicacionBLL = new PublicacionBLL();
-        $comunidadBLL = new ComunidadBLL();
-        $listaComunidades = $comunidadBLL->selectAll();
-        $listaPublicaciones = $publicacionBLL->selectAll();
-        include_once 'src/views/publicacion/list.php';
+        if(isset($request["id"])) {
+            $id = $request["id"];
+        }
+        $listaPublicaciones = $publicacionBLL->selectAllById($id);*/
+        include_once 'src/views/comunidad/list.php';
     }
 
     static function insert()
@@ -31,7 +33,7 @@ class ComunidadController
             $usuario_id = $request["usuario_id"];
             $comunidadBLL->insert($nombre, $usuario_id);
         }
-        ComunidadController::index();
+       PublicacionController::index();
     }
 
     static function update($request)
@@ -55,7 +57,7 @@ class ComunidadController
             $id = $request["id"];
             $comunidadBLL->update($nombre, $usuario_id, $id);
         }
-        ComunidadController::index();
+        PublicacionController::index();
     }
 
     static function delete($request)
@@ -65,6 +67,6 @@ class ComunidadController
             $id = $request["id"];
             $comunidadBLL->delete($id);
         }
-        ComunidadController::index();
+        PublicacionController::index();
     }
 }
