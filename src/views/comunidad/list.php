@@ -28,6 +28,10 @@ $comunidad = $comunidadBLL->selectById($id);
                             <hr>
                             <small>Posteado por: <?php echo $objPublicacion->getUsuarioForDisplay() ?></small> <br>
                             <small>Comunidad: <?php echo $objPublicacion->getComunidadForDisplay() ?></small> <br>
+                            <?php if (isset($_SESSION["usuarioLoggeado"]) && $_SESSION["idUsuario"] == $objPublicacion->getUsuarioId()): ?>
+                                <smal class="m-2"><a onclick="return confirm('¿Está seguro que desea eliminar la publicación?')" href="index.php?controller=publicacion&action=delete&id=<?php echo $objPublicacion->getPublicacionId()?>"><i class="far fa-trash"></i></a></smal>
+                                <smal class="m-2"><a  href="index.php?controller=publicacion&action=update&id=<?php echo $objPublicacion->getPublicacionId()?>"><i class="fal fa-edit"></i></a></smal>
+                            <?php endif;?>
                         </div>
                     </div>
                 <?php endforeach; ?>
