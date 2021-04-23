@@ -45,7 +45,7 @@ class ComunidadController
             $id = $request["id"];
             $objComunidad = $comunidadBLL->selectById($id);
         }
-        //include_once 'src/views/comunidad/form.php';
+        include_once 'src/views/comunidad/form.php';
     }
 
     static function saveUpdate($request)
